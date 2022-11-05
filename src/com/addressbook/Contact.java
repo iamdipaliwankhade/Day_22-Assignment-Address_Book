@@ -1,98 +1,149 @@
 package com.addressbook;
 
-public class Contact {
+import java.io.Serializable;
+import java.util.Scanner;
+
+public class Contact implements Serializable {
 	private String firstName;
 	private String lastName;
-	private String street;
+	private String address;
 	private String city;
 	private String state;
-	private int zip;
-	private long phoneNo;
+	private String zipCode;
+	private String mobileNo;
 	private String email;
 
 	public Contact() {
 	};
 
-	public Contact(String firstName, String lastName, String street, String city, String state, int zip, long phoneNo,
-			String email) {
+	public Contact(String firstName, String lastName, String address, String city, String state, String zipCode,
+			String mobileNo, String email) {
+		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.street = street;
+		this.address = address;
 		this.city = city;
 		this.state = state;
-		this.zip = zip;
-		this.phoneNo = phoneNo;
+		this.zipCode = zipCode;
+		this.mobileNo = mobileNo;
 		this.email = email;
 	}
 
+	/**
+	 * @return the firstName
+	 */
 	public String getFirstName() {
 		return firstName;
 	}
 
+	/**
+	 * @param firstName the firstName to set
+	 */
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
 
+	/**
+	 * @return the lastName
+	 */
 	public String getLastName() {
 		return lastName;
 	}
 
+	/**
+	 * @param lastName the lastName to set
+	 */
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
 
-	public String getStreet() {
-		return street;
+	/**
+	 * @return the address
+	 */
+	public String getAddress() {
+		return address;
 	}
 
-	public void setStreet(String street) {
-		this.street = street;
+	/**
+	 * @param address the address to set
+	 */
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
+	/**
+	 * @return the city
+	 */
 	public String getCity() {
 		return city;
 	}
 
+	/**
+	 * @param city the city to set
+	 */
 	public void setCity(String city) {
 		this.city = city;
 	}
 
+	/**
+	 * @return the state
+	 */
 	public String getState() {
 		return state;
 	}
 
+	/**
+	 * @param state the state to set
+	 */
 	public void setState(String state) {
 		this.state = state;
 	}
 
-	public int getZip() {
-		return zip;
+	/**
+	 * @return the zipCode
+	 */
+	public String getZipCode() {
+		return zipCode;
 	}
 
-	public void setZip(int zip) {
-		this.zip = zip;
+	/**
+	 * @param zipCode the zipCode to set
+	 */
+	public void setZipCode(String zipCode) {
+		this.zipCode = zipCode;
 	}
 
-	public long getPhoneNo() {
-		return phoneNo;
+	/**
+	 * @return the mobileNo
+	 */
+	public String getMobileNo() {
+		return mobileNo;
 	}
 
-	public void setPhoneNo(long phoneNo) {
-		this.phoneNo = phoneNo;
+	/**
+	 * @param mobileNo the mobileNo to set
+	 */
+	public void setMobileNo(String mobileNo) {
+		this.mobileNo = mobileNo;
 	}
 
+	/**
+	 * @return the email
+	 */
 	public String getEmail() {
 		return email;
 	}
 
+	/**
+	 * @param email the email to set
+	 */
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
 	@Override
 	public String toString() {
-		return "Contact{" + "firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", street='" + street
-				+ '\'' + ", city='" + city + '\'' + ", state='" + state + '\'' + ", zip=" + zip + ", phoneNo=" + phoneNo
-				+ ", email='" + email + '\'' + '}' + "\n";
+		return "Contacts [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + ", city=" + city
+				+ ", state=" + state + ", zipCode=" + zipCode + ", mobileNo=" + mobileNo + ", email=" + email + "]";
 	}
 }
