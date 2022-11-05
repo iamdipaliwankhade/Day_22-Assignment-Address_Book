@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 /**
  * 
@@ -14,8 +15,8 @@ import java.util.Scanner;
 
 public class AddressBook {
 	private ArrayList<Contact> contacts = new ArrayList<>();
-	private HashMap<String, List<Contact>> cityContactList = new HashMap<>();
-	private HashMap<String, List<Contact>> stateContactList = new HashMap<>();
+	private static HashMap<String, List<Contact>> cityContactList = new HashMap<>();
+	private static HashMap<String, List<Contact>> stateContactList = new HashMap<>();
 	private Scanner sc = new Scanner(System.in);
 
 	public void addContact() {
@@ -189,4 +190,35 @@ public class AddressBook {
 		}
 		System.out.println(count + " Contacts in " + city);
 	}
+
+	// method to sort the entries alphabetically by person's Name
+	public static void sortByName(HashMap<String, AddressBook> addressBookHashMap) {
+		List<Contact> list = new ArrayList<>();
+		for (Map.Entry<String, AddressBook> entries : addressBookHashMap.entrySet()) {
+			list = new ArrayList<>(entries.getValue().getContactList());
+		}
+		list.stream().sorted((p1, p2) -> ((String) p1.getFirstName()).compareTo(p2.getFirstName()))
+				.forEach(contact -> System.out.println(contact));
+	}
+
+	// method to sort entries by city
+	public static void sortByCity(HashMap<String, AddressBook> addressBookHashMap) {
+		List<Contact> list = new ArrayList<>();
+		for (Map.Entry<String, AddressBook> entries : addressBookHashMap.entrySet()) {
+			list = entries.getValue().getContactList().stream().collect(Collectors.toList());
+		}
+		list.stream().sorted((p1, p2) -> ((String) p1.getCity()).compareTo(p2.getCity()))
+				.forEach(contact -> System.out.println(contact));
+	}
+
+	// method to sort entries by state
+	public static void sortByState(HashMap<String, AddressBook> addressBookHashMap) {
+		List<Contact> list = new ArrayList<>();
+		for (Map.Entry<String, AddressBook> entries : addressBookHashMap.entrySet()) {
+			list = entries.getValue().getContactList().stream().collect(Collectors.toList());
+		}
+		list.stream().sorted((p1, p2) -> ((String) p1.getState()).compareTo(p2.getState()))
+				.forEach(contact -> System.out.println(contact));
+	}
+
 }
