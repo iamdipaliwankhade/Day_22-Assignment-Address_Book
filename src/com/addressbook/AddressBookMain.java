@@ -16,7 +16,7 @@ public class AddressBookMain {
 		AddressBook addressBook = new AddressBook();
 
 		while (true) {
-			System.out.println("0.Exit \n1.Add Contact \n2.Display Contact \n3.Edit Contact");
+			System.out.println("0.Exit \n1.Add Contact \n2.Display Contact \n3.Edit Contact \n4.Delete Contact");
 			int ch = sc.nextInt();
 			switch (ch) {
 			case 0:
@@ -30,6 +30,9 @@ public class AddressBookMain {
 				break;
 			case 3:
 				addressBook.editContact();
+				break;
+			case 4:
+				addressBook.deleteContact();
 				break;
 			default:
 				System.out.println("Invalid Input");
