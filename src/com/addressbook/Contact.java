@@ -12,146 +12,40 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class Contact implements Serializable {
-	private String firstName;
-	private String lastName;
-	private String address;
-	private String city;
-	private String state;
-	private String zipCode;
-	private String mobileNo;
-	private String email;
+	String firstName;
+	String lastName;
+	String address;
+	String city;
+	String state;
 
-	public Contact() {
-	};
+	String phoneNumber;
+	String email;
+	String zip;
 
-	public Contact(String firstName, String lastName, String address, String city, String state, String zipCode,
-			String mobileNo, String email) {
-		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.address = address;
-		this.city = city;
-		this.state = state;
-		this.zipCode = zipCode;
-		this.mobileNo = mobileNo;
-		this.email = email;
-	}
-
-	/**
-	 * @return the firstName
-	 */
-	public String getFirstName() {
-		return firstName;
-	}
-
-	/**
-	 * @param firstName the firstName to set
-	 */
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	/**
-	 * @return the lastName
-	 */
-	public String getLastName() {
-		return lastName;
-	}
-
-	/**
-	 * @param lastName the lastName to set
-	 */
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	/**
-	 * @return the address
-	 */
-	public String getAddress() {
-		return address;
-	}
-
-	/**
-	 * @param address the address to set
-	 */
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	/**
-	 * @return the city
-	 */
-	public String getCity() {
-		return city;
-	}
-
-	/**
-	 * @param city the city to set
-	 */
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	/**
-	 * @return the state
-	 */
-	public String getState() {
-		return state;
-	}
-
-	/**
-	 * @param state the state to set
-	 */
-	public void setState(String state) {
-		this.state = state;
-	}
-
-	/**
-	 * @return the zipCode
-	 */
-	public String getZipCode() {
-		return zipCode;
-	}
-
-	/**
-	 * @param zipCode the zipCode to set
-	 */
-	public void setZipCode(String zipCode) {
-		this.zipCode = zipCode;
-	}
-
-	/**
-	 * @return the mobileNo
-	 */
-	public String getMobileNo() {
-		return mobileNo;
-	}
-
-	/**
-	 * @param mobileNo the mobileNo to set
-	 */
-	public void setMobileNo(String mobileNo) {
-		this.mobileNo = mobileNo;
-	}
-
-	/**
-	 * @return the email
-	 */
-	public String getEmail() {
-		return email;
-	}
-
-	/**
-	 * @param email the email to set
-	 */
-	public void setEmail(String email) {
-		this.email = email;
+	void addContact() {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("First Name :");
+		this.firstName = scan.nextLine();
+		System.out.println("Last Name :");
+		this.lastName = scan.nextLine();
+		System.out.println("Enter the address :");
+		this.address = scan.nextLine();
+		System.out.println("Enter city : ");
+		this.city = scan.nextLine();
+		System.out.println("Enter state : ");
+		this.state = scan.nextLine();
+		System.out.println("Enter Phone Number : ");
+		this.phoneNumber = scan.nextLine();
+		System.out.println("Enter Email : ");
+		this.email = scan.nextLine();
+		System.out.println("Enter zip : ");
+		this.zip = scan.nextLine();
 	}
 
 	@Override
 	public String toString() {
-		return "Contacts [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + ", city=" + city
-				+ ", state=" + state + ", zipCode=" + zipCode + ", mobileNo=" + mobileNo + ", email=" + email + "]";
+		return firstName + "," + lastName + "," + address + "," + city + "," + state + "," + phoneNumber + "," + email
+				+ "," + zip;
 	}
+
 }
