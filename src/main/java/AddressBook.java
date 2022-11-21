@@ -32,8 +32,8 @@ public class AddressBook {
 		// create a List which contains String array
 		ArrayList<String[]> addrsBook = new ArrayList<String[]>();
 		addrsBook.add(new String[] { "FirstName", "LastName", "City", "State", "Zip", "Email" });
-		addrsBook.add(new String[] { "amar", "patil", "Solapur", "Maharashtra", "413004", "amar@yahoo.com" });
-		addrsBook.add(new String[] { "Aniket", "Pawar", "Pune", "Maharashtra", "413020", "pawaraniket@gmail.com" });
+		addrsBook.add(new String[] { "dipali", "wankhade", "Wardha", "Maharashtra", "442201", "dipaliwankhade.com" });
+		addrsBook.add(new String[] { "Tanuja", "Pande", "Pune", "Maharashtra", "413020", "tanujapande@gmail.com" });
 		addrsBook.add(new String[] { "Harsh", "Pukale", "Sangli", "Maarashtra", "445521", "harsh@gmail.com" });
 		writer.writeAll(addrsBook);
 
